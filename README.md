@@ -48,3 +48,16 @@
                 }
             ```
         3. ``` const canvas = document.getElementById("jsCanvas"); ``` getElementById("") 로 넘어온 요소에 값이 있으면 해당 값, 없으면 null 즉 if()문의 조건으로 사용 가능.
+
+        4. JavaScript 를 이용해 html 동적으로 만들기 - 여기서는 innerText 사용.
+            ```
+            function handleModeClick() {
+                if (filling === true) {
+                    filling = false;
+                    mode.innerText = "Fill";
+                } else {
+                    filling = true;
+                    mode.innerText = "Paint";
+                }
+            }
+            ```
