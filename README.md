@@ -61,3 +61,15 @@
                 }
             }
             ```
+--- 
+* 문제점
+    1. ``` <script src="./src/app.js"></script> ``` 를 index.html ``` <head></head> ``` 에 포함시키니 정상적으로 app.js 를 불러오지 못했다.
+* 해결책
+    1. 이유는 브라우저의 동작방식을 이해하면 알 수 있다.
+        - HTML 을 읽기 시작 -> HTML 파싱 -> DOM 트리 생성 -> Render 트리 생성(Rendering : 흰화면만 오래띄우는 경우) -> Display 표시
+        - 이때, 브라우저가 HTML 태그들을 읽어나가는 중 ```<script>``` 를 만나면 파싱을 중단하고 JavaScript 코드를 파싱한다. 완료가 되면 그 후 HTML 파싱이 계속된다.
+        이로 인해, HTML 사이에 script 태그가 위치하면 두가지 문제가 발생.
+            1. HTML 을 읽는 과정에서 script 를 만나면 중단 시점이 생기고 그만큼 display 에 표시되는 것이 지연.
+            2. DOM 트리가 생기기도 전에 JavaScript 가 생성되지도 않은 DOM 의 조작을 시도할 수 있다.
+
+    <b><i>따라서 ```<script></script>``` 태그는 body 태그 최하단에 위치하는 것이 좋다.</i></b>
