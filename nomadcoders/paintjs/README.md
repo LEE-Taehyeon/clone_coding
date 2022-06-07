@@ -72,4 +72,4 @@
             1. HTML 을 읽는 과정에서 script 를 만나면 중단 시점이 생기고 그만큼 display 에 표시되는 것이 지연.
             2. DOM 트리가 생기기도 전에 JavaScript 가 생성되지도 않은 DOM 의 조작을 시도할 수 있다.
 
-    <b><i>따라서 ```<script></script>``` 태그는 body 태그 최하단에 위치하는 것이 좋다.</i></b>
+    <b><i>따라서 ```<script></script>``` 태그는 body 태그 최하단에 위치시키거나, ```<script defer src="script.js"></script>``` defer 을 이용하여 head 에 선언하는게 좋다. </i></b>
