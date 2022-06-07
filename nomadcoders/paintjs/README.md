@@ -34,7 +34,7 @@
             |  function-scope  |  block-scope   |  block-scope   |
             |  재선언 가능  |  재선언 불가능   |  재선언 불가능   |
             |  -  |  재할당 가능   |  재할당 불가능   |
-            |  function-scope  |  ``` let a = "test1"; let a = "test2; -> 불가능.  a = "test3"; ```   |  ``` const a = "test1"; const a = "test2; -> 가능. a = "test3"; ```   |
+            |  function-scope  |  ``` let a = "test1"; `\ let a = "test2; -> 불가능.  a = "test3"; ```   |  ``` const a = "test1"; const a = "test2; -> 가능. a = "test3"; ```   |
 
 
         2. 버튼을 통한 이미지 저장.
