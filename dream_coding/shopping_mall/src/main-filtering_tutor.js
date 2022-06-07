@@ -48,7 +48,7 @@ function updateItems(items, key, value) {
 loadItems().then(items => {
   const elements = items.map(createElement);
   const container = document.querySelector('.items');
-  container.append(...elements);
+  container.append(elements);
   const buttons = document.querySelector('.buttons');
   buttons.addEventListener('click', event => onButtonClick(event, elements));
 });
